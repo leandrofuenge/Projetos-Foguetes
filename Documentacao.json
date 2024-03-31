@@ -1,0 +1,71 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "API de Dados Aleatórios",
+    "description": "Uma API para fornecer dados aleatórios relacionados a velocidade, aceleração, orientação, pressão atmosférica, temperatura e vibração."
+  },
+  "basePath": "/",
+  "paths": {
+    "/dados/velocidade": {
+      "get": {
+        "summary": "Obtém um valor aleatório de velocidade.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/dados/aceleracao": {
+      "get": {
+        "summary": "Obtém valores aleatórios de variação de velocidade e tempo, e calcula a aceleração.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/dados/orientacao": {
+      "get": {
+        "summary": "Obtém valores aleatórios de variação de ângulo e tempo, e calcula a velocidade angular.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/dados/pressao_atmosferica": {
+      "get": {
+        "summary": "Obtém valores aleatórios de variação de ângulo e tempo, e calcula a pressão atmosférica.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/dados/temperatura": {
+      "get": {
+        "summary": "Obtém um valor aleatório de temperatura em Celsius e converte para Kelvin.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/dados/vibracao": {
+      "get": {
+        "summary": "Obtém valores aleatórios de λ e frequência (f) e calcula a velocidade de vibração e o período (T).",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}

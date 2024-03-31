@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Data Consumption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            margin-top: 30px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .data-container {
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Real-Time Data Consumption</h1>
+        <div class="data-container">
+            <h2>Velocidade:</h2>
+            <p>{{ velocidade }}</p>
+        </div>
+        <div class="data-container">
+            <h2>Aceleração:</h2>
+            <p>{{ aceleracao }}</p>
+        </div>
+        <div class="data-container">
+            <h2>Orientação:</h2>
+            <p>{{ orientacao }}</p>
+        </div>
+        <div class="data-container">
+            <h2>Pressão Atmosférica:</h2>
+            <p>{{ pressao }}</p>
+        </div>
+        <div class="data-container">
+            <h2>Temperatura:</h2>
+            <p>{{ temperatura }}</p>
+        </div>
+        <div class="data-container">
+            <h2>Vibração:</h2>
+            <p>{{ vibracao }}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                velocidade: '',
+                aceleracao: '',
+                orientacao: '',
+                pressao: '',
+                temperatura: '',
+                vibracao: ''
+            },
+            created() {
+                this.fetchData();
+                setInterval(this.fetchData, 5000); // Fetch data every 5 seconds
+            },
+            methods: {
+                fetchData() {
+                    axios.get('/dados/velocidade')
+                        .then(response => this.velocidade = response.data.velocidade)
+                        .catch(error => console.error(error));
+
+                    axios.get('/dados/aceleracao')
+                        .then(response => this.aceleracao = JSON.stringify(response.data))
+                        .catch(error => console.error(error));
+
+                    axios.get('/dados/orientacao')
+                        .then(response => this.orientacao = JSON.stringify(response.data))
+                        .catch(error => console.error(error));
+
+                    axios.get('/dados/pressao_atmosferica')
+                        .then(response => this.pressao = JSON.stringify(response.data))
+                        .catch(error => console.error(error));
+
+                    axios.get('/dados/temperatura')
+                        .then(response => this.temperatura = JSON.stringify(response.data))
+                        .catch(error => console.error(error));
+
+                    axios.get('/dados/vibracao')
+                        .then(response => this.vibracao = JSON.stringify(response.data))
+                        .catch(error => console.error(error));
+                }
+            }
+        });
+    </script>
+</body>
+</html>
