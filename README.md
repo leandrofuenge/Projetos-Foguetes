@@ -8,7 +8,7 @@ Para executar o aplicativo, siga estas etapas:
 
 1. Clone o repositório:
 
-    git clone https://github.com/seu-nome-de-usuario/api-dados-tempo-real.git
+    git clone: [https://github.com/seu-nome-de-usuario/api-dados-tempo-real.git](https://github.com/leandrofuenge/Projetos-Foguetes.git)
 
 2. Navegue até o diretório do projeto:
 
