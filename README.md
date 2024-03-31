@@ -25,7 +25,7 @@ Para executar o aplicativo, siga estas etapas:
 
 Inicie o servidor Flask executando o seguinte comando:
 
-python app.py
+python dados.py
 
 ## Endpoints
 
@@ -36,20 +36,20 @@ python app.py
 /dados/temperatura: Obtenha dados simulados de temperatura.
 /dados/vibracao: Obtenha dados simulados de vibração.
 
-# Obter dados de velocidade
+Obter dados de velocidade
 http://localhost:5000/dados/velocidade
 
-# Obter dados de aceleração
+Obter dados de aceleração
 http://localhost:5000/dados/aceleracao
 
-# Obter dados de orientação
+Obter dados de orientação
 http://localhost:5000/dados/orientacao
 
-# Obter dados de pressão atmosférica
+Obter dados de pressão atmosférica
 http://localhost:5000/dados/pressao_atmosferica
 
-# Obter dados de temperatura
+Obter dados de temperatura
 http://localhost:5000/dados/temperatura
 
-# Obter dados de vibração
+Obter dados de vibração
 http://localhost:5000/dados/vibracao
